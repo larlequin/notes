@@ -25,7 +25,7 @@ user_home=`eval echo ~$SUDO_USER`
 extract_dir=$(mktemp -d /tmp/notes.XXXXX)
 
 echo "Downloading and extracting Notes from Repository..."
-    curl -L https://api.github.com/repos/pimterry/notes/tarball/latest-release | tar -xzp -C $extract_dir --strip-components=1
+    curl -L https://api.github.com/repos/larlequin/notes/tarball/latest-release | tar -xzp -C $extract_dir --strip-components=1
 if [ "$1" != "uninstall" ]; then
     echo "Installing notes..."
     cd $extract_dir && make USERDIR=$user_home

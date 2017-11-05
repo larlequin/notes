@@ -48,14 +48,14 @@ ls_notes() {
 
 search_filenames_and_contents() {
     if [ "$#" -gt 0 ]; then
-        find_output=$(find "$notes_dir" -type f -exec bash -c \
+        find_output=$(find -L "$notes_dir" -type f -exec bash -c \
             "shopt -s nocasematch
             grep -il \"$*\" \"{}\" || if [[ \"{}\" =~ \"$*\" ]]; then
                 echo \"{}\";
             fi" \;\
         )
     else
-        find_output=$(find "$notes_dir" -type f)
+        find_output=$(find -L "$notes_dir" -type f)
     fi
     find_result=$?
     formatted_output=$(printf "$find_output" | without_notes_dir)
@@ -69,7 +69,7 @@ search_filenames_and_contents() {
 }
 
 find_notes() {
-    local find_output=$(find "$notes_dir" -ipath "$notes_dir/*$**" -type f 2>&1)
+    local find_output=$(find -L "$notes_dir" -ipath "$notes_dir/*$**" -type f 2>&1)
     local find_result=$?
     local formatted_output=$(printf "$find_output" | without_notes_dir)
 

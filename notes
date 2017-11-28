@@ -117,8 +117,16 @@ new_note() {
     if [[ $note_name == "" ]]; then
          note_name="$(generate_name)"
     fi
-    mkdir -p "$(dirname "$notes_dir/$note_name")"
-    open_note "$note_name.$NOTES_EXT"
+    if [[ $(dirname $note_name) != "" ]]; then
+        local thedate=`date +"%Y%m%d"`
+        local base="$( echo $(dirname $note_name) | cut -d '_' -f 2)"
+        local new_name="$(dirname $note_name)/$base-$thedate-$(basename $note_name)"
+        mkdir -p "$new_name"
+        open_note "$new_name.$NOTES_EXT" 
+    else
+        mkdir -p "$(dirname "$notes_dir/$note_name")"
+        open_note "$note_name.$NOTES_EXT"
+    fi
 }
 
 remove_note() {

@@ -26,7 +26,7 @@ This is just one tool in the chain. `notes` is a command line tool, and some peo
 ### Automatic:
 
 ```bash
-curl -L https://rawgit.com/pimterry/notes/latest-release/install.sh | bash
+curl -L https://rawgit.com/larlequin/notes/latest-release/install.sh | bash
 ```
 This will install `notes`, a default configuration, a man page, and bash completion if possible.
 
@@ -35,7 +35,7 @@ This will install `notes`, a default configuration, a man page, and bash complet
 Download `notes`, `chmod +x`, put it in your `$path`. This will probably do it:
 
 ```bash
-curl https://raw.githubusercontent.com/pimterry/notes/latest-release/notes > /usr/local/bin/notes && chmod +x /usr/local/bin/notes
+curl https://raw.githubusercontent.com/larlequin/notes/latest-release/notes > /usr/local/bin/notes && chmod +x /usr/local/bin/notes
 ```
 
 #### Installing auto completion
@@ -51,20 +51,20 @@ Installing the completions might be as follows:
 **Bash**
 
 ```bash
-curl https://cdn.rawgit.com/pimterry/notes/latest-release/notes.bash_completion > /usr/share/bash-completion/completions/notes
+curl https://cdn.rawgit.com/larlequin/notes/latest-release/notes.bash_completion > /usr/share/bash-completion/completions/notes
 ```
 
 **Zsh**
 
 On *buntu based distros and OSX:
 ```bash
-curl -L https://rawgit.com/pimterry/notes/latest-release/_notes > /usr/local/share/zsh/site-functions/_notes
+curl -L https://rawgit.com/larlequin/notes/latest-release/_notes > /usr/local/share/zsh/site-functions/_notes
 ```
 
 On other Unix distros:
 
 ```bash
-curl -L https://rawgit.com/pimterry/notes/latest-release/_notes > /usr/share/zsh/site-functions/_notes
+curl -L https://rawgit.com/larlequin/notes/latest-release/_notes > /usr/share/zsh/site-functions/_notes
 ```
 
 You'll need to open a new shell for this to take effect.
